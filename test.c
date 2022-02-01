@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main(void)
+{
+	printf("%u\n", -10);
+	printf("%u\n", 0);
+	printf("%u\n", 8594967296);
+	printf("%u\n", -3295);
+	printf("%u\n", -1023);
+}

@@ -6,4 +6,6 @@
 # include <stdarg.h>
 # include "src/libft.h"
 
+void	ft_putunbr(unsigned int u);
+
 #endif

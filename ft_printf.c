@@ -5,7 +5,7 @@ int	ft_printf(const char *format, ...)
 	int		i;
 	va_list	ap;
 
-	va_start(ap, )
+	va_start(ap, format);
 	i = 0;
 	while (format[i])
 	{
@@ -13,19 +13,19 @@ int	ft_printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == 'c')
-				ft_putchar_fd(va_arg(ap, char), 1);
+				ft_putchar_fd(va_arg(ap, int), 1);
 			if (format[i] == 's')
 				ft_putstr_fd(va_arg(ap, char *), 1);
 			if (format[i] == 'p')
 			{
+				ft_putnbr_fd(va_arg(ap, int), 1);
 			}
 			if (format[i] == 'd')
 				ft_putnbr_fd(va_arg(ap, int), 1);
 			if (format[i] == 'i')
 				ft_putnbr_fd(va_arg(ap, int), 1);
 			if (format[i] == 'u')
-			{
-			}
+				ft_putunbr(va_arg(ap, unsigned int));
 			if (format[i] == 'x')
 			{
 			}
@@ -39,4 +39,13 @@ int	ft_printf(const char *format, ...)
 			write(1, &format[i], 1);
 		i++;
 	}
+	return (0);
+}
+
+int	main(void)
+{
+	void *a, *b;
+
+	ft_printf("%c %s %d %% %u %u %p %p Hello World!\n", 'A', "string", 42, -1, 4294967296, a, b);
+	printf("%p %p\n", a, b);
 }
