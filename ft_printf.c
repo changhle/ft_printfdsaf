@@ -47,5 +47,5 @@ int	main(void)
 	void *a, *b;
 
 	ft_printf("%c %s %d %% %u %u %p %p Hello World!\n", 'A', "string", 42, -1, 4294967296, a, b);
-	printf("%p %p\n", a, b);
+	printf("%p %p %x %x\n", a, b, 100, -1141564635438400);
 }
