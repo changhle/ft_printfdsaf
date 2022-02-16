@@ -16,3 +16,5 @@ void	ft_putunbr(unsigned int u)
 		write(1, &c, 1);
 	}
 }
+
+void	ft_putxnbr(un)
