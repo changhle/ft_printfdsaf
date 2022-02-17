@@ -12,10 +12,13 @@ typedef struct	s_flag
 	int	f_plus;
 	int	f_zero;
 	int	f_hash;
-	int	space;
+	int	f_space;
 	int	width;
 	int	precision;
 	int	type;
 }	t_flag;
+
+int	print_percent(t_flag *flag);
+int	print_c(t_flag *flag, va_list ap);
 
 #endif
