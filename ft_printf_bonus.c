@@ -35,14 +35,14 @@ int	print(t_flag *flag, va_list ap)
 		ret = print_c(flag, ap);
 	else if (flag->type == 's')
 		ret = print_s(flag, ap);
-	/*else if (flag->type == 'p')
-		ret = print_p(flag, ap);
+	// else if (flag->type == 'p')
+	// 	ret = print_p(flag, ap);
 	else if (flag->type == 'd' || flag->type == 'i')
 		ret = print_di(flag, ap);
-	else if (flag->type == 'u')
-		ret = print_u(flag, ap);
-	else if (flag->type == 'x' flag->type == 'X')
-		ret = print_xX(flag, ap); */
+	// else if (flag->type == 'u')
+	// 	ret = print_u(flag, ap);
+	// else if (flag->type == 'x' flag->type == 'X')
+	// 	ret = print_xX(flag, ap);
 	else if (flag->type == '%')
 		ret = print_percent(flag);
 	return (ret);
@@ -131,6 +131,7 @@ int	main(void)
 	ft_printf("%-5.1s0\n", "abc");
 	ft_printf("%-2.5s0\n", "abc");
 	ft_printf("%-2.1s0\n", "abc");
+	printf("-----di-----\n");
 	ft_printf("%d\n", 123);
 	ft_printf("%d\n", 2147483648);
 	ft_printf("%d\n", -123);
