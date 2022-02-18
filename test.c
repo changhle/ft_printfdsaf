@@ -37,4 +37,9 @@ int main(void)
 	printf("%2.0s0\n", "abc");
 	printf("%2.-1s0\n", "abc");
 	printf("%2.-2s0\n", "abc");
+	printf("-------di-------\n");
+	printf("%+ d\n", 123);
+	printf("% 0d\n", 123);
+	printf("% 5d\n", 123);
+	printf("%d\n", 2147483648);
 }
