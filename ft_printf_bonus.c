@@ -131,6 +131,10 @@ int	main(void)
 	ft_printf("%-5.1s0\n", "abc");
 	ft_printf("%-2.5s0\n", "abc");
 	ft_printf("%-2.1s0\n", "abc");
+	ft_printf("%d\n", 123);
+	ft_printf("%d\n", 2147483648);
+	ft_printf("%d\n", -123);
+	ft_printf("%d\n", -2147483649);
 }
 
 /* int	main(void)
