@@ -8,7 +8,7 @@ void	init_flag(t_flag *flag)
 	flag->f_hash = -1;
 	flag->f_space = -1;
 	flag->width = 0;
-	flag->precision = -1;
+	flag->precision = 0;
 	flag->type = 0;
 }
 
@@ -67,7 +67,7 @@ void	parse(const char *format, int *index, t_flag *flag)
 		(*index)++;
 		while (ft_strchr("0123456789", format[*index]))
 		{
-			flag->precision = flag->width * 10 + format[*index] - '0';
+			flag->precision = flag->precision * 10 + format[*index] - '0';
 			(*index)++;
 		}
 	}
@@ -112,6 +112,25 @@ int	main(void)
 	ft_printf("%05c0\n", 'a');
 	ft_printf("%-05c0\n", 'a');
 	ft_printf("%-5c0\n", 'a');
+	ft_printf("%5s0\n", "abc");
+	ft_printf("%2s0\n", "abc");
+	ft_printf("%05s0\n", "abc");
+	ft_printf("%02s0\n", "abc");
+	ft_printf("%.5s0\n", "abc");
+	ft_printf("%5.5s0\n", "abc");
+	ft_printf("%5.1s0\n", "abc");
+	ft_printf("%2.5s0\n", "abc");
+	ft_printf("%2.1s0\n", "abc");
+	ft_printf("------------------\n");
+	ft_printf("%-5s0\n", "abc");
+	ft_printf("%-2s0\n", "abc");
+	ft_printf("%-05s0\n", "abc");
+	ft_printf("%-02s0\n", "abc");
+	ft_printf("%-.5s0\n", "abc");
+	ft_printf("%-5.5s0\n", "abc");
+	ft_printf("%-5.1s0\n", "abc");
+	ft_printf("%-2.5s0\n", "abc");
+	ft_printf("%-2.1s0\n", "abc");
 }
 
 /* int	main(void)
