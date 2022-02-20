@@ -7,13 +7,19 @@ int	print_c_space(t_flag *flag)
 	ret = 1;
 	if (!(flag->f_minus > -1) && flag->f_zero > -1)
 	{
-		while (flag->width > ret++)
+		while (flag->width > ret)
+		{
 			write(1, "0", 1);
+			ret++;
+		}
 	}
 	else
 	{
-		while (flag->width > ret++)
+		while (flag->width > ret)
+		{
 			write(1, " ", 1);
+			ret++;
+		}
 	}
 	return (ret);
 }

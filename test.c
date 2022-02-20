@@ -73,4 +73,28 @@ int main(void)
 	printf("%-5.8d0\n", 123);
 	printf("%+5d--\n", 123);
 	printf("%+05d--\n", 123);
+	printf("%+5d--\n", 0);
+	printf("%+5.4d0\n", 123);
+	printf("%5.8d0\n", -123);
+	printf("%5.3d--\n", 0);
+	printf("%-5.3d--\n", 0);
+	printf("%.3d--\n", 0);
+	printf("%+.3d--\n", 0);
+	printf("%5.1d--\n", 0);
+	printf("%-5.1d--\n", 0);
+	printf("%.1d--\n", 0);
+	printf("%+.1d--\n", 0);
+	printf("%5.0d--\n", 0);
+	printf("%-5.0d--\n", 0);
+	printf("%.0d--\n", 0);
+	printf("%+.0d--\n", 0);
+	printf("%5.d--\n", 0);
+	printf("%-5.d--\n", 0);
+	printf("%.d--\n", 0);
+	printf("%+.d--\n", 0);
+	printf("%5.0d--\n", 123);
+	printf("%+8.4d--\n", 123);
+	printf("%8.4d--\n", -123);
+	printf("% 8.4d--\n", 123);
+	printf("% 8.4d--\n", -123);
 }
