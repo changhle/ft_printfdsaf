@@ -8,6 +8,7 @@ void	init_flag(t_flag *flag)
 	flag->f_hash = -1;
 	flag->f_space = -1;
 	flag->width = 0;
+	flag->dot = -1;
 	flag->precision = 0;
 	flag->type = 0;
 }
@@ -64,6 +65,7 @@ void	parse(const char *format, int *index, t_flag *flag)
 	}
 	if (format[*index] == '.')
 	{
+		flag->dot = index;
 		(*index)++;
 		while (ft_strchr("0123456789", format[*index]))
 		{

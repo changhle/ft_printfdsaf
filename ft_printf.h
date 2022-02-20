@@ -14,6 +14,7 @@ typedef struct	s_flag
 	int	f_hash;
 	int	f_space;
 	int	width;
+	int	dot;
 	int	precision;
 	int	type;
 }	t_flag;
