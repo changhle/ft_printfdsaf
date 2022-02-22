@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int	ft_nbr_len(int nbr)
+int	ft_nbr_len(long nbr)
 {
 	int				len;
 	unsigned int	u_nbr;
@@ -21,7 +21,7 @@ int	ft_nbr_len(int nbr)
 	return (len);
 }
 
-int	print_sign(t_flag *flag, int nbr)
+int	print_sign(t_flag *flag, long nbr)
 {
 	int	ret;
 
@@ -63,7 +63,7 @@ void	ft_putnbr(long n)
 	}
 }
 
-int	print_nbr(t_flag *flag, int nbr)
+int	print_nbr(t_flag *flag, long nbr)
 {
 	int	nbr_len;
 
@@ -75,12 +75,12 @@ int	print_nbr(t_flag *flag, int nbr)
 		write(1, "0", 1);
 		nbr_len++;
 	}
-	if (!flag->dot || flag->precision > 0 || nbr > 0)
+	if (!flag->dot || flag->precision > 0 || nbr != 0)
 		ft_putnbr(nbr);
 	return (nbr_len);
 }
 
-int	print_space(t_flag *flag, int nbr)
+int	print_space(t_flag *flag, long nbr)
 {
 	int	nbr_len;
 	int	ret;
@@ -137,9 +137,9 @@ int	print_di(t_flag *flag, va_list ap)
 
 int	print_u(t_flag *flag, va_list ap)
 {
-	int	ret;
-	int	nbr;
-	int	nbr_len;
+	int		ret;
+	long	nbr;
+	int		nbr_len;
 
 	ret = 0;
 	nbr = va_arg(ap, unsigned int);
