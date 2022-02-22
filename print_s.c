@@ -40,7 +40,6 @@ int	print_s_space(t_flag *flag, char *str)
 int	print_s(t_flag *flag, va_list ap)
 {
 	int		ret;
-	int		str_len;
 	char	*str;
 
 	ret = 0;

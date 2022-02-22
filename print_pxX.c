@@ -87,7 +87,7 @@ int	print_xspace(t_flag *flag, unsigned int xnbr)
 	return (ret);
 }
 
-int	print_xX(t_flag *flag, va_list ap)
+int	print_pxX(t_flag *flag, va_list ap)
 {
 	int				ret;
 	unsigned int	xnbr;
