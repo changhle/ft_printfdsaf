@@ -2,7 +2,7 @@ CC = clang
 CFLAGS = -Wall -Wextra -Werror
 
 NAME = libftprintf.a
-SRCS = ft_printf.c ft_print_percent_bonus.c ft_print_c_bonus.c ft_print_s_bonus.c ft_print_di_bonus.c ft_strlen.c ft_strchr.c ft_print_pxX_bonus.c
+SRCS = ft_printf.c print_percent.c print_c.c print_s.c print_diu.c print_pxX.c ft_strlen.c ft_strchr.c
 OBJS = $(SRCS:.c=.o)
 
 $(NAME) : $(OBJS)

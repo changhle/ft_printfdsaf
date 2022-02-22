@@ -27,6 +27,6 @@ int	print_c(t_flag *flag, va_list ap);
 int	print_s(t_flag *flag, va_list ap);
 int	print_di(t_flag *flag, va_list ap);
 int	print_u(t_flag *flag, va_list ap);
-int	print_xX(t_flag *flag, va_list ap);
+int	print_pxX(t_flag *flag, va_list ap);
 
 #endif

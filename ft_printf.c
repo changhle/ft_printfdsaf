@@ -36,14 +36,12 @@ int	print(t_flag *flag, va_list ap)
 		ret = print_c(flag, ap);
 	else if (flag->type == 's')
 		ret = print_s(flag, ap);
-	// else if (flag->type == 'p')
-	// 	ret = print_p(flag, ap);
 	else if (flag->type == 'd' || flag->type == 'i')
 		ret = print_di(flag, ap);
 	else if (flag->type == 'u')
 		ret = print_u(flag, ap);
-	else if (flag->type == 'x' || flag->type == 'X')
-		ret = print_xX(flag, ap);
+	else if (flag->type == 'x' || flag->type == 'X' || flag->type == 'p')
+		ret = print_pxX(flag, ap);
 	else if (flag->type == '%')
 		ret = print_percent(flag);
 	return (ret);
