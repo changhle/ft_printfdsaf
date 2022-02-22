@@ -40,8 +40,8 @@ int	print(t_flag *flag, va_list ap)
 	// 	ret = print_p(flag, ap);
 	else if (flag->type == 'd' || flag->type == 'i')
 		ret = print_di(flag, ap);
-	// else if (flag->type == 'u')
-	// 	ret = print_u(flag, ap);
+	else if (flag->type == 'u')
+		ret = print_u(flag, ap);
 	// else if (flag->type == 'x' flag->type == 'X')
 	// 	ret = print_xX(flag, ap);
 	else if (flag->type == '%')
@@ -53,6 +53,7 @@ void	parse(const char *format, int *index, t_flag *flag)
 {
 	(*index)++;
 	init_flag(flag);
+	// printf("\n\nbefore-- %d %d %d %d %d %d %d %d %d\n", flag->f_minus, flag->f_plus, flag->f_zero, flag->f_hash, flag->f_space, flag->width, flag->dot, flag->precision, flag->type);
 	while (ft_strchr("-0#+ ", format[*index]))
 	{
 		set_flag(format, *index, flag);
@@ -88,12 +89,12 @@ int	ft_printf(const char *format, ...)
 	index = 0;
 	ret = 0;
 	flag = malloc(sizeof(t_flag));
-	init_flag(flag);
 	while (format[index])
 	{
 		if (format[index] == '%')
 		{
 			parse(format, &index, flag);
+			// printf("after-- %d %d %d %d %d %d %d %d %d\n", flag->f_minus, flag->f_plus, flag->f_zero, flag->f_hash, flag->f_space, flag->width, flag->dot, flag->precision, flag->type);
 			ret += print(flag, ap);
 		}
 		else
@@ -103,8 +104,8 @@ int	ft_printf(const char *format, ...)
 		}
 		index++;
 	}
-	free(flag);
 	va_end(ap);
+	free(flag);
 	return (ret);
 }
 
@@ -262,4 +263,62 @@ int	ft_printf(const char *format, ...)
 	// // printf("--%d\n", ft_printf(" %d ", ULONG_MAX));
 	// // printf("--%d\n", ft_printf(" %d ", 9223372036854775807LL));
 	// // printf("--%d\n", ft_printf(" %d %d %d %d %d %d %d", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
+	// printf("--%d\n", printf(" %01d ", 0));
+	// printf("--%d\n", printf(" %02d ", -1));
+	// printf("--%d\n", printf(" %04d ", 9));
+	// printf("--%d\n", printf(" %01d ", 10));
+	// printf("--%d\n", printf(" %02d ", 11));
+	// printf("--%d\n", printf(" %03d ", 15));
+	// printf("--%d\n", printf(" %04d ", 16));
+	// printf("--%d\n", printf(" %05d ", 17));
+	// printf("--%d\n", printf(" %01d ", 99));
+	// printf("--%d\n", printf(" %02d ", 100));
+	// printf("--%d\n", printf(" %03d ", 101));
+	// printf("--%d\n", printf(" %01d ", -9));
+	// printf("--%d\n", printf(" %02d ", -10));
+	// printf("--%d\n", printf(" %03d ", -11));
+	// printf("--%d\n", printf(" %04d ", -14));
+	// printf("--%d\n", printf(" %05d ", -15));
+	// printf("--%d\n", printf(" %06d ", -16));
+	// printf("--%d\n", printf(" %01d ", -99));
+	// printf("--%d\n", printf(" %02d ", -100));
+	// printf("--%d\n", printf(" %03d ", -101));
+	printf("--%d\n", printf(" %09d ", INT_MAX));
+	printf("--%d\n", printf(" %010d ", INT_MIN));
+	// printf("--%d\n", printf(" %011d ", LONG_MAX));
+	// printf("--%d\n", printf(" %012d ", LONG_MIN));
+	printf("--%d\n", printf(" %013d ", UINT_MAX));
+	printf("--%d\n", printf(" %d %d %d ", 1, 2, 3));
+	// printf("--%d\n", printf(" %014d ", ULONG_MAX));
+	// printf("--%d\n", printf(" %09d %010d %011d %012d %013d %014d %015d", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
+	// printf("-----------------------\n");
+	// printf("--%d\n", ft_printf(" %01d ", 0));
+	// printf("--%d\n", ft_printf(" %02d ", -1));
+	// printf("--%d\n", ft_printf(" %04d ", 9));
+	// printf("--%d\n", ft_printf(" %01d ", 10));
+	// printf("--%d\n", ft_printf(" %02d ", 11));
+	// printf("--%d\n", ft_printf(" %03d ", 15));
+	// printf("--%d\n", ft_printf(" %04d ", 16));
+	// printf("--%d\n", ft_printf(" %05d ", 17));
+	// printf("--%d\n", ft_printf(" %01d ", 99));
+	// printf("--%d\n", ft_printf(" %02d ", 100));
+	// printf("--%d\n", ft_printf(" %03d ", 101));
+	// printf("--%d\n", ft_printf(" %01d ", -9));
+	// printf("--%d\n", ft_printf(" %02d ", -10));
+	// printf("--%d\n", ft_printf(" %03d ", -11));
+	// printf("--%d\n", ft_printf(" %04d ", -14));
+	// printf("--%d\n", ft_printf(" %05d ", -15));
+	// printf("--%d\n", ft_printf(" %06d ", -16));
+	// printf("--%d\n", ft_printf(" %01d ", -99));
+	// printf("--%d\n", ft_printf(" %02d ", -100));
+	// printf("--%d\n", ft_printf(" %03d ", -101));
+	printf("--%d\n", ft_printf(" %09d ", INT_MAX));
+	printf("--%d\n", ft_printf(" %010d ", INT_MIN));
+	// printf("--%d\n", ft_printf(" %011d ", LONG_MAX));
+	// printf("--%d\n", ft_printf(" %012d ", LONG_MIN));
+	printf("--%d\n", ft_printf(" %013d ", UINT_MAX));
+	// printf("--%d\n", ft_printf(" %014d ", ULONG_MAX));
+	printf("--%d\n", ft_printf(" %09d %010d %014d %015d", INT_MAX, INT_MIN, 0, -42));
+	printf("--%d\n", ft_printf(" %d %d %d ", 1, 2, 3));
+	printf("--%d\n", ft_printf(" %c %c %c ", '1', '2', '3'));
 } */

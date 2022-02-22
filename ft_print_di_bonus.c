@@ -118,6 +118,7 @@ int	print_di(t_flag *flag, va_list ap)
 
 	ret = 0;
 	nbr = va_arg(ap, int);
+	// printf("%d\n", nbr);
 	nbr_len = ft_nbr_len(nbr);
 	if (flag->f_minus > -1)
 	{
@@ -127,8 +128,32 @@ int	print_di(t_flag *flag, va_list ap)
 	}
 	else
 	{
-		ret += print_space(flag, nbr);
 		ret += print_sign(flag, nbr);
+		ret += print_space(flag, nbr);
+		ret += print_nbr(flag, nbr);
+	}
+	return (ret);
+}
+
+int	print_u(t_flag *flag, va_list ap)
+{
+	int	ret;
+	int	nbr;
+	int	nbr_len;
+
+	ret = 0;
+	nbr = va_arg(ap, unsigned int);
+	nbr_len = ft_nbr_len(nbr);
+	if (flag->f_minus > -1)
+	{
+		ret += print_sign(flag, nbr);
+		ret += print_nbr(flag, nbr);
+		ret += print_space(flag, nbr);
+	}
+	else
+	{
+		ret += print_sign(flag, nbr);
+		ret += print_space(flag, nbr);
 		ret += print_nbr(flag, nbr);
 	}
 	return (ret);
