@@ -142,7 +142,7 @@ int	ft_printf(const char *format, ...)
 	ft_printf("%d\n", -2147483649);
 } */
 
-int	main(void)
+/* int	main(void)
 {
 	// printf("--%d\n", printf("%c", '0'));
 	// printf("--%d\n", printf(" %c ", '0'));
@@ -426,23 +426,23 @@ int	main(void)
 	// printf("--%d\n", ft_printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
 	// printf("--%d\n", ft_printf(" %x ", 42));
 	// printf("--%d\n", ft_printf(" %x ", -42));
-	printf("--%d\n", printf(" %p ", -1));
-	printf("--%d\n", printf(" %p ", 1));
-	printf("--%d\n", printf(" %p ", 15));
-	printf("--%d\n", printf(" %p ", 16));
-	printf("--%d\n", printf(" %p ", 17));
-	printf("--%d\n", printf(" %p %p ", LONG_MIN, LONG_MAX));
-	printf("--%d\n", printf(" %p %p ", INT_MIN, INT_MAX));
-	printf("--%d\n", printf(" %p %p ", ULONG_MAX, -ULONG_MAX));
-	printf("--%d\n", printf(" %p %p ", 0, 0));
-	printf("-----------------------\n");
-	printf("--%d\n", ft_printf(" %p ", -1));
-	printf("--%d\n", ft_printf(" %p ", 1));
-	printf("--%d\n", ft_printf(" %p ", 15));
-	printf("--%d\n", ft_printf(" %p ", 16));
-	printf("--%d\n", ft_printf(" %p ", 17));
-	printf("--%d\n", ft_printf(" %p %p ", LONG_MIN, LONG_MAX));
-	printf("--%d\n", ft_printf(" %p %p ", INT_MIN, INT_MAX));
-	printf("--%d\n", ft_printf(" %p %p ", ULONG_MAX, -ULONG_MAX));
-	printf("--%d\n", ft_printf(" %p %p ", 0, 0));
-}
+	// printf("--%d\n", printf(" %p ", -1));
+	// printf("--%d\n", printf(" %p ", 1));
+	// printf("--%d\n", printf(" %p ", 15));
+	// printf("--%d\n", printf(" %p ", 16));
+	// printf("--%d\n", printf(" %p ", 17));
+	// printf("--%d\n", printf(" %p %p ", LONG_MIN, LONG_MAX));
+	// printf("--%d\n", printf(" %p %p ", INT_MIN, INT_MAX));
+	// printf("--%d\n", printf(" %p %p ", ULONG_MAX, -ULONG_MAX));
+	// printf("--%d\n", printf(" %p %p ", 0, 0));
+	// printf("-----------------------\n");
+	// printf("--%d\n", ft_printf(" %p ", -1));
+	// printf("--%d\n", ft_printf(" %p ", 1));
+	// printf("--%d\n", ft_printf(" %p ", 15));
+	// printf("--%d\n", ft_printf(" %p ", 16));
+	// printf("--%d\n", ft_printf(" %p ", 17));
+	// printf("--%d\n", ft_printf(" %p %p ", LONG_MIN, LONG_MAX));
+	// printf("--%d\n", ft_printf(" %p %p ", INT_MIN, INT_MAX));
+	// printf("--%d\n", ft_printf(" %p %p ", ULONG_MAX, -ULONG_MAX));
+	// printf("--%d\n", ft_printf(" %p %p ", 0, 0));
+} */

@@ -91,7 +91,7 @@ int	print_space(t_flag *flag, long nbr)
 		nbr--;
 	if (flag->precision > nbr_len)
 		nbr_len = flag->precision;
-	if (!(flag->f_minus > -1) && flag->f_zero)
+	if (!(flag->f_minus > -1) && flag->f_zero > -1)
 	{
 		while (flag->width > nbr_len + ret)
 		{
@@ -128,8 +128,8 @@ int	print_di(t_flag *flag, va_list ap)
 	}
 	else
 	{
-		ret += print_sign(flag, nbr);
 		ret += print_space(flag, nbr);
+		ret += print_sign(flag, nbr);
 		ret += print_nbr(flag, nbr);
 	}
 	return (ret);
@@ -152,8 +152,8 @@ int	print_u(t_flag *flag, va_list ap)
 	}
 	else
 	{
-		ret += print_sign(flag, nbr);
 		ret += print_space(flag, nbr);
+		ret += print_sign(flag, nbr);
 		ret += print_nbr(flag, nbr);
 	}
 	return (ret);

@@ -5,7 +5,7 @@ int	print_mark(t_flag *flag)
 	int	ret;
 
 	ret = 0;
-	if (flag->f_hash > -1 && (flag->type == 'x' || flag->type == 'p'))
+	if ((flag->f_hash > -1 && flag->type == 'x') || flag->type == 'p')
 	{
 		write(1, "0x", 2);
 		ret = 2;
