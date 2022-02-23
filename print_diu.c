@@ -75,8 +75,9 @@ int	print_nbr(t_flag *flag, long nbr)
 		write(1, "0", 1);
 		nbr_len++;
 	}
-	if (!flag->dot || flag->precision > 0 || nbr != 0)
-		ft_putnbr(nbr);
+	if (flag->dot == 1 && flag->precision == 0 && nbr == 0)
+		return (0);
+	ft_putnbr(nbr);
 	return (nbr_len);
 }
 
@@ -87,11 +88,17 @@ int	print_space(t_flag *flag, long nbr)
 
 	ret = 0;
 	nbr_len = ft_nbr_len(nbr);
-	if (nbr < 0)
-		nbr--;
-	if (flag->precision > nbr_len)
+	// if (nbr < 0)
+	// 	nbr--;
+	if (flag->precision >= nbr_len)
+	{
 		nbr_len = flag->precision;
-	if (!(flag->f_minus > -1) && flag->f_zero > -1)
+		if (nbr < 0)
+			nbr_len++;
+	}
+		if (flag->dot == 1 && flag->precision == 0 && nbr == 0)
+		nbr_len = 0;
+	if (!(flag->f_minus > -1 || flag->dot == 1) && flag->f_zero > -1)
 	{
 		while (flag->width > nbr_len + ret)
 		{

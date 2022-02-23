@@ -45,10 +45,7 @@ int	print_s(t_flag *flag, va_list ap)
 	ret = 0;
 	str = va_arg(ap, char *);
 	if (!str)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
+		str = "(null)";		
 	if (flag->f_minus > -1)
 	{
 		ret += print_str(flag, str);
